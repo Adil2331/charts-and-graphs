@@ -1,0 +1,64 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+p,
+span {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.light {
+  color: #919eab;
+  transition: 500ms linear;
+}
+
+.black {
+  background-color: #161c24;
+
+  transition: 500ms linear;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: white;
+  }
+
+  .timeLine-theme,
+  .news-theme,
+  .task-theme,
+  .traffic-theme,
+  .visit-theme,
+  .rates-theme,
+  .CurrentVisits-theme,
+  .Subject-theme {
+    background-color: #212b36;
+    transition: 500ms linear;
+  }
+}
+
+.test {
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,23 @@
+.rates-theme {
+  width: 664px;
+  padding: 24px;
+  height: 390px;
+  h2 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .rates-theme {
+    width: 450px;
+  }
+}
+
+@media (max-width: 800px) {
+  .rates-theme {
+    width: 300px;
+    height: 250px;
+  }
+}

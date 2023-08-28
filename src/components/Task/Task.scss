@@ -1,0 +1,35 @@
+.task-inner {
+  display: flex;
+  flex-direction: row;
+  width: 712px;
+  height: 56px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 1300px) {
+  .task-theme {
+    width: 500px;
+  }
+  .task-inner {
+    width: 500px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .task-theme {
+    width: 350px;
+  }
+  .task-inner {
+    width: 350px;
+  }
+}
+
+@media (max-width: 800px) {
+  .task-theme {
+    width: 350px;
+  }
+  .task-inner {
+    width: 350px;
+  }
+}

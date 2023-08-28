@@ -1,0 +1,15 @@
+.news-theme {
+  width: 712px;
+}
+
+@media (max-width: 1200px) {
+  .news-theme {
+    width: 450px;
+  }
+}
+
+@media (max-width: 800px) {
+  .news-theme {
+    width: 350px;
+  }
+}

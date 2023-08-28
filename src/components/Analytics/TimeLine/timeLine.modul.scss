@@ -1,0 +1,20 @@
+.timeLine-theme {
+  width: 300px;
+  height: 389px;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0px 0px 2px rgba(145, 158, 171, 0.2),
+    0px 12px 24px -4px rgba(145, 158, 171, 0.12);
+}
+
+@media (max-width: 1200px) {
+  .timeLine-theme {
+    width: 250px;
+  }
+}
+
+@media (max-width: 800px) {
+  .timeLine-theme {
+    width: 300px;
+  }
+}
