@@ -1,4 +1,4 @@
-import { Chart } from "react-chartjs-2";
+import { Chart } from 'react-chartjs-2'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,11 +11,10 @@ import {
   BarController,
   BarElement,
   Filler,
-} from "chart.js";
-import "./visit.modul.scss";
-
-import { faker } from "@faker-js/faker";
-import { useAppSelector } from "../../Redux/store";
+} from 'chart.js'
+import './visit.modul.scss'
+import { faker } from '@faker-js/faker'
+import { useAppSelector } from '../../Redux/store'
 
 ChartJS.register(
   CategoryScale,
@@ -28,9 +27,42 @@ ChartJS.register(
   BarElement,
   BarController,
   Filler
-);
+)
 
-export const options = {
+interface IOptions {
+  responsive: boolean
+  tension: number
+  scales: {
+    x: {
+      stacked: boolean
+      grid: {
+        offset: boolean
+      }
+    }
+    y: {
+      stacked: boolean
+    }
+  }
+}
+
+interface IData {
+  labels: string[]
+  datasets: {
+    type: 'bar' | 'line'
+    label: string
+    backgroundColor?: string
+    data: number[]
+    borderColor?: string
+    borderWidth?: number
+    barPercentage?: number
+    barThickness?: number
+    maxBarThickness?: number
+    minBarLength?: number
+    fill?: boolean | 'origin'
+  }[]
+}
+
+export const options: IOptions = {
   responsive: true,
   tension: 0.3,
   scales: {
@@ -44,33 +76,33 @@ export const options = {
       stacked: true,
     },
   },
-};
+}
 
 const labels = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "July",
-  "Aug",
-  "sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'July',
+  'Aug',
+  'sep',
+  'Oct',
+  'Nov',
+  'Dec',
+]
 
-export const data = {
+export const data: IData = {
   labels,
   datasets: [
     {
-      type: "bar" as const,
-      label: "Team A",
-      backgroundColor: "rgb(0, 171, 85)",
+      type: 'bar' as const,
+      label: 'Team A',
+      backgroundColor: 'rgb(0, 171, 85)',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
 
-      borderColor: "rgb(75, 192, 192)",
+      borderColor: 'rgb(75, 192, 192)',
       borderWidth: 0,
       barPercentage: 0.5,
       barThickness: 6,
@@ -78,87 +110,87 @@ export const data = {
       minBarLength: 2,
     },
     {
-      type: "line" as const,
-      label: "Team B",
+      type: 'line' as const,
+      label: 'Team B',
       data: labels.map(() => faker.datatype.number({ min: 20, max: 100 })),
-      borderColor: "rgb(45, 153, 255)",
-      backgroundColor: "rgba(45, 153, 255)",
+      borderColor: 'rgb(45, 153, 255)',
+      backgroundColor: 'rgba(45, 153, 255)',
       barPercentage: 0.5,
       barThickness: 6,
       maxBarThickness: 8,
       minBarLength: 2,
     },
     {
-      type: "line" as const,
-      label: "Team C",
+      type: 'line' as const,
+      label: 'Team C',
       data: labels.map(() => faker.datatype.number({ min: 10, max: 100 })),
-      borderColor: "rgb(255, 231, 0)",
-      backgroundColor: "rgba(255, 231, 0, 0.16)",
-      fill: "origin",
+      borderColor: 'rgb(255, 231, 0)',
+      backgroundColor: 'rgba(255, 231, 0, 0.16)',
+      fill: 'origin',
       barPercentage: 0.5,
       barThickness: 6,
       maxBarThickness: 8,
       minBarLength: 2,
     },
   ],
-};
+}
 
-export function Visit() {
-  const language = useAppSelector((state) => state.language.language);
+export const Visit: React.FC = () => {
+  const language = useAppSelector((state) => state.language.language)
 
   return (
     <div
       className="visit-theme"
       style={{
         boxShadow:
-          "0px 0px 2px rgba(145, 158, 171, 0.2), 0px 12px 24px -4px rgba(145, 158, 171, 0.12)",
-        borderRadius: "16px",
+          '0px 0px 2px rgba(145, 158, 171, 0.2), 0px 12px 24px -4px rgba(145, 158, 171, 0.12)',
+        borderRadius: '16px',
       }}
     >
-      <h2>{language ? "Website Visits" : "Посещения веб-сайта"}</h2>
+      <h2>{language ? 'Website Visits' : 'Посещения веб-сайта'}</h2>
       <p>
         {language
-          ? "(+43%) than last year"
-          : "(+43%) по сравнению с прошлым годом"}
+          ? '(+43%) than last year'
+          : '(+43%) по сравнению с прошлым годом'}
       </p>
       <div
         style={{
-          display: "flex",
-          gap: "16px",
-          justifyContent: "flex-end",
+          display: 'flex',
+          gap: '16px',
+          justifyContent: 'flex-end',
           fontWeight: 500,
-          fontSize: "13px",
-          lineHeight: "18px",
+          fontSize: '13px',
+          lineHeight: '18px',
         }}
       >
         <h3>
           <img
-            style={{ marginRight: "8px" }}
-            src={require("../../../assets/img/green-icon.png")}
+            style={{ marginRight: '8px' }}
+            src={require('../../../assets/img/green-icon.png')}
             alt=""
           />
-          {language ? "Team A" : "Команда A"}
+          {language ? 'Team A' : 'Команда A'}
         </h3>
         <h3>
           <img
-            style={{ marginRight: "8px" }}
-            src={require("../../../assets/img/yellow-icon.png")}
+            style={{ marginRight: '8px' }}
+            src={require('../../../assets/img/yellow-icon.png')}
             alt=""
           />
-          {language ? "Team B" : "Команда B"}
+          {language ? 'Team B' : 'Команда B'}
         </h3>
         <h3>
           <img
-            style={{ marginRight: "8px" }}
-            src={require("../../../assets/img/blue-icon.png")}
+            style={{ marginRight: '8px' }}
+            src={require('../../../assets/img/blue-icon.png')}
             alt=""
           />
-          {language ? "Team C" : "Команда C"}
+          {language ? 'Team C' : 'Команда C'}
         </h3>
       </div>
-      <div style={{ maxWidth: "664px" }}>
+      <div style={{ maxWidth: '664px' }}>
         <Chart options={options} data={data} type="bar" />
       </div>
     </div>
-  );
+  )
 }

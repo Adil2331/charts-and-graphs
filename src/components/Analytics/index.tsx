@@ -19,7 +19,7 @@ import Subject from '../grapAndCharts/Subject'
 import { setLanguageEng, setLanguageRus } from '../Redux/languageSlice'
 import Rates from '../grapAndCharts/Rates'
 
-const Analytics = () => {
+const Analytics: React.FC = () => {
   const dispatch = useDispatch()
   const [state, setstate] = useState(true)
 
@@ -35,7 +35,11 @@ const Analytics = () => {
         </div>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <img
-            style={{ width: '30px', transition: '500ms linear' }}
+            style={{
+              width: '30px',
+              transition: '500ms linear',
+              cursor: 'pointer',
+            }}
             src={theme ? sun : moon}
             alt=""
             onClick={() => dispatch(setTheme())}

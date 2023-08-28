@@ -2,10 +2,17 @@ import { useState } from 'react'
 import '../Task/Task.scss'
 import { useAppSelector } from '../Redux/store'
 
-const Task = () => {
+interface ITask {
+  textEng: string
+  textRus: string
+  id: string
+  checked: boolean
+}
+
+const Task: React.FC = () => {
   const theme = useAppSelector((state) => state.theme.theme)
   const language = useAppSelector((state) => state.language.language)
-  const [check, setCheck] = useState([
+  const [check, setCheck] = useState<ITask[]>([
     {
       textEng: 'Create FireStone Logo',
       textRus: 'Создать логотип FireStone',
@@ -66,7 +73,7 @@ const Task = () => {
         {language ? 'Tasks' : 'Задачи'}
       </h2>
 
-      {check.map((e, i) => {
+      {check.map((e) => {
         return (
           <div key={e.textEng} className="task-inner">
             <div

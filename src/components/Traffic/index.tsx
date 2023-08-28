@@ -1,14 +1,20 @@
 import './traffic.modul.scss'
 import { useAppSelector } from '../Redux/store'
 
-const items = [
+interface Item {
+  img: string
+  number: string
+  text: string
+}
+
+const items: Item[] = [
   { img: 'facebook.png', number: '8,20k', text: 'FaceBook' },
   { img: 'google-color.png', number: '7,2k', text: 'Google' },
   { img: 'linkedin.png', number: '6,2k', text: 'Linkedin' },
   { img: 'Path.png', number: '4,5k', text: 'Twitter' },
 ]
 
-const Traffic = () => {
+const Traffic: React.FC = () => {
   const language = useAppSelector((state) => state.language.language)
   return (
     <div className="traffic-theme">

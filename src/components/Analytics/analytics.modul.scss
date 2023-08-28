@@ -30,6 +30,10 @@
   display: none;
 }
 
+.analytics-nav_items {
+  cursor: pointer;
+}
+
 @media (max-width: 1100px) {
   .analytics {
     h1 {
