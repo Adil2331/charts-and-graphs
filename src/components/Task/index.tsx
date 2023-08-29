@@ -10,8 +10,8 @@ interface ITask {
 }
 
 const Task: React.FC = () => {
-  const theme = useAppSelector((state) => state.theme.theme)
-  const language = useAppSelector((state) => state.language.language)
+  const theme = useAppSelector((state) => state.themeSlice.theme)
+  const language = useAppSelector((state) => state.languageSlice.language)
   const [check, setCheck] = useState<ITask[]>([
     {
       textEng: 'Create FireStone Logo',

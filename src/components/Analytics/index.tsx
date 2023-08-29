@@ -23,8 +23,8 @@ const Analytics: React.FC = () => {
   const dispatch = useDispatch()
   const [state, setstate] = useState(true)
 
-  const theme = useAppSelector((state) => state.theme.theme)
-  const language = useAppSelector((state) => state.language.language)
+  const theme = useAppSelector((state) => state.themeSlice.theme)
+  const language = useAppSelector((state) => state.languageSlice.language)
   return (
     <div className="analytics">
       <div className="analytics-nav">

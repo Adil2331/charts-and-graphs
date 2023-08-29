@@ -89,7 +89,7 @@ const itemsRus: AnalyticsItem[] = [
 ]
 
 const AnalyticsHeader: React.FC = () => {
-  const language = useAppSelector((state) => state.language.language)
+  const language = useAppSelector((state) => state.languageSlice.language)
 
   const selectedItems = language ? items : itemsRus
 

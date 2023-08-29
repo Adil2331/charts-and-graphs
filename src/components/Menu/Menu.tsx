@@ -46,7 +46,7 @@ const appsRus = [
 ]
 
 const Menu = () => {
-  const language = useAppSelector((state) => state.language.language)
+  const language = useAppSelector((state) => state.languageSlice.language)
   const [state, setstate] = useState(false)
   return (
     <div className="menu">

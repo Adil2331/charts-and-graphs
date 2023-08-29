@@ -43,7 +43,7 @@ export const data: Data = {
 }
 
 const Subject: React.FC = () => {
-  const language = useAppSelector((state) => state.language.language)
+  const language = useAppSelector((state) => state.languageSlice.language)
   return (
     <div
       className="Subject-theme"

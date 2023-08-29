@@ -27,7 +27,7 @@ export const data: Data = {
 }
 
 const CurrentVisits: React.FC = () => {
-  const language = useAppSelector((state) => state.language.language)
+  const language = useAppSelector((state) => state.languageSlice.language)
   return (
     <div
       className="CurrentVisits-theme"

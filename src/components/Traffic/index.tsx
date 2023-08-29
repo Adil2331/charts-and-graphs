@@ -15,7 +15,7 @@ const items: Item[] = [
 ]
 
 const Traffic: React.FC = () => {
-  const language = useAppSelector((state) => state.language.language)
+  const language = useAppSelector((state) => state.languageSlice.language)
   return (
     <div className="traffic-theme">
       <h2

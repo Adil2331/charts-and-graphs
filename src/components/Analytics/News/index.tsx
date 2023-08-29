@@ -78,7 +78,7 @@ const itemsRus: NewsItem[] = [
 ]
 
 const News: React.FC = () => {
-  const language = useAppSelector((state) => state.language.language)
+  const language = useAppSelector((state) => state.languageSlice.language)
   return (
     <div
       className="news-theme"

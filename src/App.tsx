@@ -3,7 +3,7 @@ import Home from './components/Home'
 import { useAppSelector } from './components/Redux/store'
 
 function App() {
-  const theme = useAppSelector((state) => state.theme.theme)
+  const theme = useAppSelector((state) => state.themeSlice.theme)
 
   return (
     <div className={theme ? 'light' : 'black'}>
